@@ -65,6 +65,22 @@ class Team
 
 end
 
+class Library
+
+  attr_accessor :book_list
+
+  def initialize(book_list)
+    @book_list = book_list
+  end
+
+  def list_all_books
+      return @book_list
+  end
+
+
+
+
+end
 
 
 

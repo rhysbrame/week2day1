@@ -82,19 +82,87 @@ class TestTeam < MiniTest::Test
 
 end
 
-  
+class TestLibrary < MiniTest::Test  
+
+    def setup
+      @library = Library.new(
+    [
+    { title: "Book_1",
+    rental_details: {
+      student_name: "Student A",
+      date: "1/1/17"
+    }   
+    },
+    
+    { title: "Book_2",
+    rental_details: {
+      student_name: "Student B",
+      date: "2/1/17"
+    } 
+    },
+    
+    { title: "Book_3",
+    rental_details: {
+      student_name: "Student C",
+      date: "3/1/17"
+    } 
+    },
+
+    { title: "Book_4",
+    rental_details: {
+      student_name: "Student D",
+      date: "4/1/17"
+    } 
+    },
+
+    { title: "Book_5",
+    rental_details: {
+      student_name: "Student E",
+      date: "5/1/17"
+    } 
+    }
+    ]
+    )
+    end
+
+  def test_list_all_books
+    assert_equal(    [
+    { title: "Book_1",
+    rental_details: {
+      student_name: "Student A",
+      date: "1/1/17"
+    }   
+    },
+    
+    { title: "Book_2",
+    rental_details: {
+      student_name: "Student B",
+      date: "2/1/17"
+    } 
+    },
+    
+    { title: "Book_3",
+    rental_details: {
+      student_name: "Student C",
+      date: "3/1/17"
+    } 
+    },
+
+    { title: "Book_4",
+    rental_details: {
+      student_name: "Student D",
+      date: "4/1/17"
+    } 
+    },
+
+    { title: "Book_5",
+    rental_details: {
+      student_name: "Student E",
+      date: "5/1/17"
+    } 
+    }
+    ], @library.list_all_books)
+  end
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+end
